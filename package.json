@@ -1,0 +1,12 @@
+{
+  "name": "getir",
+  "version": "1.0.0",
+  "description": "Getir code challenge",
+  "main": "index.js",
+  "repository": "https://github.com/mbugerald/getir-challenge",
+  "author": "Mbu Gerald ",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
