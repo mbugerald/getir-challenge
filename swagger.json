@@ -1,0 +1,75 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Simple Swgger set up for Getir code challenge mongo database.",
+    "version": "1.0.0",
+    "title": "Getir Code Evaluation"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "records",
+      "description": "Retrieve a given list of records with preconditions."
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/records": {
+      "post": {
+        "tags": [
+          "records"
+        ],
+        "summary": "Add a new pet to the store",
+        "description": "",
+        "operationId": "addPet",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Records"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Records": {
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "minCount": {
+          "type": "integer"
+        },
+        "maxCount": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
