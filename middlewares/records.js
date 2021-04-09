@@ -79,8 +79,6 @@ router.post('/', async (req, res) => {
 
    } catch (err) {
 
-      console.log(err)
-
       const response = {
          code: 500,
          message: "Internal server error",

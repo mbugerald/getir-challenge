@@ -15,15 +15,18 @@ app.use(bodyParser.json());
 app.use('/records', Records);
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Connect to mongo database.
-mongoose.connect(
-    mongo_uri,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    },
-    () => console.log('Connected to Getir mongo database!'))
-
+try {
+    // Connect to mongo database.
+    mongoose.connect(
+        mongo_uri,
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        },
+        () => console.log('Connected to Getir mongo database!'));
+} catch (err) {
+    console.log(err);
+}
 
 
 // Launch the server and listen on port 3000.
