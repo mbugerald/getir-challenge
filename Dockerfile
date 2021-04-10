@@ -1,5 +1,8 @@
 FROM node:14
 
+ENV GETIR_MONGO_URI='mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true'
+ENV PORT=80
+
 # Create app directory
 WORKDIR /app
 
